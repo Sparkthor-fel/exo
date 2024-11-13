@@ -3,3 +3,14 @@ extends layout
 block content
   h1= title
   p Welcome to #{title}
+  
+  p Please select your birthdate
+  
+  form(method='GET', action='/horoscope')
+    input(type='date', name='bday', required)
+	button.btn.btn-primary(type='submit') Get my signs
+  
+  if sign
+	p Your astroligical sign is : #{sign}
+  if zodiac
+	p Your zodiac sign is : #{zodiac}
